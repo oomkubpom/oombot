@@ -30,11 +30,9 @@ app.post('/webhook/', function (req, res) {
       if (text === 'hi') {
         sendTextMessage(sender," Hello my name is Pongsathon Bunnuwong or you can call me Oom");
         sendTextMessage(sender,"Do you want to know anything about me ? Education,Address.Type a keyword and enter pls.");
-
-        if (text === 'Education') {
-          sendTextMessage(sender,"KMUTNB");
-        }
-
+      }
+      if (text === 'Education') {
+        sendTextMessage(sender,"KMUTNB");
       }
       else {
         sendTextMessage(sender, "Just say hi to get started");
