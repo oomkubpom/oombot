@@ -27,19 +27,6 @@ app.post('/webhook/', function (req, res) {
       var text = event.message.text;
       // Handle a text message from this sender
       console.log(text);
-
-      curl -X POST -H "Content-Type: application/json" -d '{
-  "setting_type":"call_to_actions",
-  "thread_state":"new_thread",
-  "call_to_actions":[
-    {
-      "message":{
-        "text":"Welcome to My Company!"
-      }
-    }
-  ]
-}' "https://graph.facebook.com/v2.6/1552941068333951/thread_settings?access_token=<EAAKG5hD8ozkBADOpDTfsEPDUS7xPuSeEhwLOj1Y1K0KYJe3yNtb6mJZAfAlc1obACVtniAK7OTF7pSo6ZBQeCU3JaMlCrorsvLFOVD3TNTLV348UtCC0pMEnJdamgZBL6mZBCYWi4NArV9veKqms49cN23nETkcSNnI8i1ozRQZDZD>"
-
       if (text === 'hi') {
         sendTextMessage(sender,"Hello");
       }
