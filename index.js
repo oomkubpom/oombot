@@ -27,6 +27,9 @@ app.post('/webhook/', function (req, res) {
       var text = event.message.text;
       // Handle a text message from this sender
       console.log(text);
+      if (text === 'hi') {
+        sendTextMessage(sender,"Hello");
+      }
       sendTextMessage(sender, "I don't know "+ text.substring(0, 200));
     }
   }
