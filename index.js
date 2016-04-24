@@ -31,11 +31,11 @@ app.post('/webhook/', function (req, res) {
         sendTextMessage(sender," Hello my name is Oom");
         sendTextMessage(sender,"Do you want to know anything about me ? Education,Address.Type a keyword and enter pls.");
       }
-      if (text === 'Education') {
+      else if (text === 'Education') {
         sendTextMessage(sender,"Network at KMUTNB");
       }
       else {
-        sendTextMessage(sender,"Just say hi to get started");
+        sendTextMessage(sender, "Just say hi to get started");
       }
     }
   }
