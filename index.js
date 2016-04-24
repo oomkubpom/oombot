@@ -29,10 +29,13 @@ app.post('/webhook/', function (req, res) {
       console.log(text);
       if (text === 'hi') {
         sendTextMessage(sender," Hello my name is Oom");
-        sendTextMessage(sender,"Do you want to know anything about me ? Education,Address.Type a keyword and enter pls.");
+        sendTextMessage(sender,"Do you want to know anything about me ? education, country.Type a keyword and enter pls.");
       }
-      else if (text === 'Education') {
+      else if (text === 'education') {
         sendTextMessage(sender,"Network at KMUTNB");
+      }
+      else if (text === 'country') {
+        sendTextMessage(sender,"Thailand")
       }
       else {
         sendTextMessage(sender, "Just say hi to get started");
