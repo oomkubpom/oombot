@@ -30,7 +30,9 @@ app.post('/webhook/', function (req, res) {
       if (text === 'hi') {
         sendTextMessage(sender,"Hello");
       }
-      sendTextMessage(sender, "I don't know "+ text.substring(0, 200));
+      else {
+        sendTextMessage(sender, "I don't know "+ text.substring(0, 200));
+      }
     }
   }
   res.sendStatus(200);
