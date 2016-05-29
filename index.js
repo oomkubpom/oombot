@@ -26,9 +26,7 @@ app.post('/webhook/', function (req, res) {
     if (event.message && event.message.text) {
       var text = event.message.text;
       console.log(text)
-      // sendTextMessage(sender, text)
       var sln = text.length
-      // console.log('length : ' + sln)
       var getFunc = text.substring(0, 3)
       console.log('func : ' + getFunc)
       if (getFunc === 'sum') {
@@ -42,7 +40,7 @@ app.post('/webhook/', function (req, res) {
         console.log('sum : ' + sum)
         sendTextMessage(sender, sum)
       }
-      if (getFunc === 'max') {
+      else if (getFunc === 'max') {
         var gettext = text.substring(4, text.length)
         console.log('number : ' + gettext)
         var space = gettext.search(' ')
@@ -56,7 +54,7 @@ app.post('/webhook/', function (req, res) {
           sendTextMessage(sender, num2)
         }
       }
-      if (getFunc === 'min') {
+      else if (getFunc === 'min') {
         var gettext = text.substring(4, text.length)
         console.log('number : ' + gettext)
         var space = gettext.search(' ')
@@ -70,7 +68,7 @@ app.post('/webhook/', function (req, res) {
           sendTextMessage(sender, num2)
         }
       }
-      if (getFunc === 'avg') {
+      else if (getFunc === 'avg') {
         var num = []
         var sum = 0
         var gettext = text.substring(4, text.length)
