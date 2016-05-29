@@ -25,22 +25,63 @@ app.post('/webhook/', function (req, res) {
     var sender = event.sender.id;
     if (event.message && event.message.text) {
       var text = event.message.text;
-      // Handle a text message from this sender
-      console.log(text);
-      if (text === 'sum') {
-        sendTextMessage(sender,"sum");
+      console.log(text)
+      // sendTextMessage(sender, text)
+      var sln = text.length
+      // console.log('length : ' + sln)
+      var getFunc = text.substring(0, 3)
+      console.log('func : ' + getFunc)
+      if (getFunc === 'sum') {
+        var gettext = text.substring(4, text.length)
+        console.log('number : ' + gettext)
+        var space = gettext.search(' ')
+        var num1 = parseFloat(gettext.substring(0, space))
+        var num2 = parseFloat(gettext.substring(space, gettext.length))
+        console.log('number1 : ' + num1 + ' number2 : ' + num2)
+        var sum = num1 + num2
+        console.log('sum : ' + sum)
+        sendTextMessage(sender, 'sum : ' + sum)
       }
-      else if (text === 'max') {
-        sendTextMessage(sender,"max");
+      if (getFunc === 'max') {
+        var gettext = text.substring(4, text.length)
+        console.log('number : ' + gettext)
+        var space = gettext.search(' ')
+        var num1 = parseFloat(gettext.substring(0, space))
+        var num2 = parseFloat(gettext.substring(space, gettext.length))
+        console.log('number1 : ' + num1 + ' number2 : ' + num2)
+        if (num1 > num2) {
+          sendTextMessage(sender, 'max : ' + num1)
+        }
+        if (num2 > num1) {
+          sendTextMessage(sender, 'max : ' + num2)
+        }
       }
-      else if (text === 'min') {
-        sendTextMessage(sender,"")
+      if (getFunc === 'min') {
+        var gettext = text.substring(4, text.length)
+        console.log('number : ' + gettext)
+        var space = gettext.search(' ')
+        var num1 = parseFloat(gettext.substring(0, space))
+        var num2 = parseFloat(gettext.substring(space, gettext.length))
+        console.log('number1 : ' + num1 + ' number2 : ' + num2)
+        if (num1 < num2) {
+          sendTextMessage(sender, 'min : ' + num1)
+        }
+        if (num2 < num1) {
+          sendTextMessage(sender, 'min : ' + num2)
+        }
       }
-      else if (text === 'avg') {
-        sendTextMessage(sender,"")
-      }
-      else {
-        sendTextMessage(sender, "I don't know");
+      if (getFunc === 'avg') {
+        var num = []
+        var sum = 0
+        var gettext = text.substring(4, text.length)
+        console.log('text : ' + gettext)
+        num = gettext.split(' ')
+        console.log('split : ' + num + ' len = ' + num.length)
+        for (var i = 0;i < num.length;i++) {
+          sum += parseFloat(num[i])
+        }
+        console.log('sum : ' + sum + 'avg : ' + sum/num.length)
+        sendTextMessage(sender, 'avg : ' + sum/num.length)
       }
     }
   }
