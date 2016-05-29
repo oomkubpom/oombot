@@ -75,7 +75,7 @@ app.post('/webhook/', function (req, res) {
         var gettext = text.substring(4, text.length)
         console.log('text : ' + gettext)
         num = gettext.split(' ')
-        console.log('split : ' + num + ' len = ' + num.length)
+        console.log('split : ' + num + ' length = ' + num.length)
         for (var i = 0;i < num.length;i++) {
           sum += parseFloat(num[i])
         }
