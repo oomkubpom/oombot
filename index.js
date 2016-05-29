@@ -83,7 +83,7 @@ app.post('/webhook/', function (req, res) {
         sendTextMessage(sender, sum/num.length)
       }
       else {
-        sendTextMessage(sender,"pls input keyword sum,max,min and 2 number or avg and number1 - numberN")
+        sendTextMessage(sender,"Please input keyword sum,max,min and 2 number or avg and number1 - numberN")
       }
     }
   }
