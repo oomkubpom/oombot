@@ -36,7 +36,7 @@ app.post('/webhook/', function (req, res) {
         sendTextMessage(sender,"max");
       }
       else if (text === 'min') {
-        sendTextMessage(sender,"")
+        sendTextMessage(sender,"min")
       }
       else if (text === 'avg') {
         sendTextMessage(sender,"")
