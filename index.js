@@ -83,6 +83,9 @@ app.post('/webhook/', function (req, res) {
         console.log('sum : ' + sum + 'avg : ' + sum/num.length)
         sendTextMessage(sender, sum/num.length)
       }
+      if (check === 0) {
+        sendTextMessage(sender, 'You type wrong please try again!')
+      }
     }
   }
   res.sendStatus(200);
