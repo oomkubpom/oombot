@@ -26,7 +26,7 @@ app.post('/webhook/', function (req, res) {
     if (event.message && event.message.text) {
       var text = event.message.text;
       var res = text.substring(0, 2);
-      var num1 = text.substring(4, 4);
+      //var num1 = text.substring(4, 4);
       // Handle a text message from this sender
       console.log(text);
       if (res === 'sum') {
