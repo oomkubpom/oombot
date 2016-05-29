@@ -83,6 +83,9 @@ app.post('/webhook/', function (req, res) {
         console.log('sum : ' + sum + 'avg : ' + sum/num.length)
         sendTextMessage(sender, sum/num.length)
       }
+      else {
+        sendTextMessage(sender,"pls input sum,max,min and 2 number or input avg and number1 - numberN")
+      }
     }
   }
   res.sendStatus(200);
