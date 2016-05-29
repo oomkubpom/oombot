@@ -32,7 +32,7 @@ app.post('/webhook/', function (req, res) {
         sendTextMessage(sender,"sum");
       }
       else if (text === 'max') {
-        sendTextMessage(sender,"");
+        sendTextMessage(sender,"max");
       }
       else if (text === 'min') {
         sendTextMessage(sender,"")
