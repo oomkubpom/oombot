@@ -40,7 +40,7 @@ app.post('/webhook/', function (req, res) {
         console.log('number1 : ' + num1 + ' number2 : ' + num2)
         var sum = num1 + num2
         console.log('sum : ' + sum)
-        sendTextMessage(sender, 'sum : ' + sum)
+        sendTextMessage(sender, sum)
       }
       if (getFunc === 'max') {
         var gettext = text.substring(4, text.length)
@@ -50,10 +50,10 @@ app.post('/webhook/', function (req, res) {
         var num2 = parseFloat(gettext.substring(space, gettext.length))
         console.log('number1 : ' + num1 + ' number2 : ' + num2)
         if (num1 > num2) {
-          sendTextMessage(sender, 'max : ' + num1)
+          sendTextMessage(sender, num1)
         }
         if (num2 > num1) {
-          sendTextMessage(sender, 'max : ' + num2)
+          sendTextMessage(sender, num2)
         }
       }
       if (getFunc === 'min') {
