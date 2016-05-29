@@ -27,18 +27,20 @@ app.post('/webhook/', function (req, res) {
       var text = event.message.text;
       // Handle a text message from this sender
       console.log(text);
-      if (text === 'hi') {
-        sendTextMessage(sender," Hello my name is Oom");
-        sendTextMessage(sender,"Do you want to know anything about me ? education, country.Type a keyword and enter pls.");
+      if (text === 'sum') {
+        sendTextMessage(sender,"");
       }
-      else if (text === 'education') {
-        sendTextMessage(sender,"Network at KMUTNB");
+      else if (text === 'max') {
+        sendTextMessage(sender,"");
       }
-      else if (text === 'country') {
-        sendTextMessage(sender,"Thailand")
+      else if (text === 'min') {
+        sendTextMessage(sender,"")
+      }
+      else if (text === 'avg') {
+        sendTextMessage(sender,"")
       }
       else {
-        sendTextMessage(sender, "Just say hi to get started");
+        sendTextMessage(sender, "I don't know");
       }
     }
   }
